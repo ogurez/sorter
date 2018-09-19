@@ -4,8 +4,6 @@ class Sorter {
     // your implementation
     this.arr=[];
     let comparator=null;
-    this.length=this.arr.length;
-    
   }
 
   add(element) {
@@ -21,7 +19,11 @@ class Sorter {
 
   get length() {
     // your implementation
-    return this.length;
+    return this.arr.length;
+  }
+
+  set length(){
+    this.length=this.arr.length;
   }
 
   toArray() {
