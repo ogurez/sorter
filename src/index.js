@@ -22,10 +22,6 @@ class Sorter {
     return this.arr.length;
   }
 
-  set length(){
-    this.length=this.arr.length;
-  }
-
   toArray() {
     // your implementation
     return this.arr;
