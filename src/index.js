@@ -3,13 +3,14 @@ class Sorter {
   constructor() {
     // your implementation
     this.arr=[];
-    let comparator=null;
+    this.comparator=function(left, right) {
+      return left - right;
+    };
   }
 
   add(element) {
     // your implementation
     this.arr.push(element);
-    this.length++;
   }
 
   at(index) {
@@ -30,15 +31,12 @@ class Sorter {
   sort(indices) {
     // your implementation
     let newArr=[];
+    indices.sort(this.comparator);
     for(let i=0; i<indices.length; i++){
       newArr.push(this.arr[indices[i]]);
     }
-      if(comparator!==null){
-        newArr.sort(comparator);
-      }
-      else{
-        newArr.sort();
-      }
+     
+      newArr.sort(this.comparator);
 
       for(let i=0; i<indices.length; i++){
         this.arr[indices[i]]=newArr[i];
@@ -48,7 +46,7 @@ class Sorter {
 
   setComparator(compareFunction) {
     // your implementation
-    comparator=compareFunction;
+    this.comparator=compareFunction;
   }
 }
 
