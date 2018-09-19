@@ -31,7 +31,8 @@ class Sorter {
   sort(indices) {
     // your implementation
     let newArr=[];
-    indices.sort(this.comparator);
+    indices.sort(function(left, right) {
+      return left - right;});
     for(let i=0; i<indices.length; i++){
       newArr.push(this.arr[indices[i]]);
     }
